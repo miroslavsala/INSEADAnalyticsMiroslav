@@ -1,0 +1,1737 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  <link rel="dns-prefetch" href="https://assets-cdn.github.com">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-521cbf980c80.css" integrity="sha512-Uhy/mAyAx1HfsenmjQ85ASpOk5bjt2Ay03pNeixXIvkHlEm5S+N4u0HWfDGhvsGYx4bGyviXWGGPZeIffqYcNA==" media="all" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-51d0ccb0b3a5.css" integrity="sha512-UdDMsLOlmT+N3XJQL/Vq5JjXriptukZ468KVJqK9BiZV7pwLYPzQRLvGWHtB/GHfiG4x7XHg8YbKJstRyb2Nag==" media="all" rel="stylesheet" />
+  
+  
+  
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>INSEADAnalytics/MarketSegmentationProcessInClass.Rmd at master · InseadDataAnalytics/INSEADAnalytics</title>
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    
+    <meta content="https://avatars3.githubusercontent.com/u/6098619?s=400&amp;v=4" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="InseadDataAnalytics/INSEADAnalytics" property="og:title" /><meta content="https://github.com/InseadDataAnalytics/INSEADAnalytics" property="og:url" /><meta content="Contribute to INSEADAnalytics development by creating an account on GitHub." property="og:description" />
+
+  <link rel="assets" href="https://assets-cdn.github.com/">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MjQ2MTgxNzAyOmJiYTFkMTM1YmE1NTIwZjkzMzhmMmUwNzY2ZTVhZTk2OWIzY2Y4MzliMTdmNjhkYzgzMTNjMDU2NWQzN2I4ZjQ=--083d3c5c0ea9debcee40c7a132e47254ee9b3d7e">
+  <meta name="pjax-timeout" content="1000">
+  <link rel="sudo-modal" href="/sessions/sudo_modal">
+  <meta name="request-id" content="F609:33C1:BED61E:137CD7B:5A7D703D" data-pjax-transient>
+  
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient>
+
+    <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+  <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+  <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="F609:33C1:BED61E:137CD7B:5A7D703D" name="octolytics-dimension-request_id" /><meta content="iad" name="octolytics-dimension-region_edge" /><meta content="iad" name="octolytics-dimension-region_render" /><meta content="24554461" name="octolytics-actor-id" /><meta content="miroslavsala" name="octolytics-actor-login" /><meta content="b6f0ca74ecdf8e8297275d185054a3b388005911821ae2dda0cb750b626ea7fe" name="octolytics-actor-hash" />
+<meta content="https://github.com/hydro_browser_events" name="hydro-events-url" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
+
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+  
+
+      <meta name="hostname" content="github.com">
+  <meta name="user-login" content="miroslavsala">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="ZWY4Yzg0OWM5ZDVmZGVmNDMzOTMyMDc1YmFkMTIzZTUxMzgxZmRkYmQyMTU5NGI4ZTY0MTI0Njc3MDExYjc1ZHx7InJlbW90ZV9hZGRyZXNzIjoiMTc1LjE3Ni4xNzMuMzAiLCJyZXF1ZXN0X2lkIjoiRjYwOTozM0MxOkJFRDYxRToxMzdDRDdCOjVBN0Q3MDNEIiwidGltZXN0YW1wIjoxNTE4MTcwMTczLCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+
+    <meta name="enabled-features" content="UNIVERSE_BANNER,MULTIPLE_ATTRIBUTION,FREE_TRIALS,MARKETPLACE_HERO_CARD_UPLOADER,CONTRIBUTOR_FLAGGED_CONTENT">
+
+  <meta name="html-safe-nonce" content="452a3fe1bf10dcfc0bee9a13cfba7705d4c1d728">
+
+  <meta http-equiv="x-pjax-version" content="8ca49ff9b47040f82fcbb0ecf8908fb5">
+  
+
+      <link href="https://github.com/InseadDataAnalytics/INSEADAnalytics/commits/master.atom" rel="alternate" title="Recent Commits to INSEADAnalytics:master" type="application/atom+xml">
+
+  <meta name="description" content="Contribute to INSEADAnalytics development by creating an account on GitHub.">
+  <meta name="go-import" content="github.com/InseadDataAnalytics/INSEADAnalytics git https://github.com/InseadDataAnalytics/INSEADAnalytics.git">
+
+  <meta content="6098619" name="octolytics-dimension-user_id" /><meta content="InseadDataAnalytics" name="octolytics-dimension-user_login" /><meta content="15819896" name="octolytics-dimension-repository_id" /><meta content="InseadDataAnalytics/INSEADAnalytics" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="15819896" name="octolytics-dimension-repository_network_root_id" /><meta content="InseadDataAnalytics/INSEADAnalytics" name="octolytics-dimension-repository_network_root_nwo" /><meta content="false" name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" />
+
+
+    <link rel="canonical" href="https://github.com/InseadDataAnalytics/INSEADAnalytics/blob/master/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd" data-pjax-transient>
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://assets-cdn.github.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+
+  </head>
+
+  <body class="logged-in env-production page-blob">
+    
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="#start-of-content" tabindex="1" class="bg-black text-white p-3 show-on-focus js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+
+        
+<header class="Header  f5" role="banner">
+  <div class="d-flex px-3 flex-justify-between container-lg">
+    <div class="d-flex flex-justify-between">
+      <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+
+
+    </div>
+
+    <div class="HeaderMenu d-flex flex-justify-between flex-auto">
+      <div class="d-flex">
+            <div class="">
+              <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/InseadDataAnalytics/INSEADAnalytics/search" class="js-site-search-form" data-scoped-search-url="/InseadDataAnalytics/INSEADAnalytics/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <label class="form-control header-search-wrapper js-chromeless-input-container">
+        <a href="/InseadDataAnalytics/INSEADAnalytics/blob/master/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd" class="header-search-scope no-underline">This repository</a>
+      <input type="text"
+        class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
+        data-hotkey="s"
+        name="q"
+        value=""
+        placeholder="Search"
+        aria-label="Search this repository"
+        data-unscoped-placeholder="Search GitHub"
+        data-scoped-placeholder="Search"
+        autocapitalize="off">
+        <input type="hidden" class="js-site-search-type-field" name="type" >
+    </label>
+</form></div>
+
+            </div>
+
+          <ul class="d-flex pl-2 flex-items-center text-bold list-style-none" role="navigation">
+            <li>
+              <a href="/pulls" aria-label="Pull requests you created" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">
+                Pull requests
+</a>            </li>
+            <li>
+              <a href="/issues" aria-label="Issues you created" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:issues context:user" data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues">
+                Issues
+</a>            </li>
+                <li>
+                  <a href="/marketplace" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:marketplace context:user" data-selected-links=" /marketplace">
+                    Marketplace
+</a>                </li>
+            <li>
+              <a href="/explore" class="js-selected-navigation-item HeaderNavlink px-2" data-ga-click="Header, click, Nav menu - item:explore" data-selected-links="/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore">
+                Explore
+</a>            </li>
+          </ul>
+      </div>
+
+      <div class="d-flex">
+        
+<ul class="user-nav d-flex flex-items-center list-style-none" id="user-links">
+  <li class="dropdown js-menu-container">
+    <span class="d-inline-block  px-2">
+      
+
+    </span>
+  </li>
+
+  <li class="dropdown js-menu-container">
+    <details class="dropdown-details details-reset js-dropdown-details d-flex px-2 flex-items-center">
+      <summary class="HeaderNavlink"
+         aria-label="Create new…"
+         data-ga-click="Header, create new, icon:add">
+        <svg aria-hidden="true" class="octicon octicon-plus float-left mr-1 mt-1" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5z"/></svg>
+        <span class="dropdown-caret mt-1"></span>
+      </summary>
+
+      <ul class="dropdown-menu dropdown-menu-sw">
+        
+<a class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+  <a class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository">
+    Import repository
+  </a>
+
+<a class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
+  New gist
+</a>
+
+  <a class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+
+  <div class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="InseadDataAnalytics/INSEADAnalytics">This repository</span>
+  </div>
+    <a class="dropdown-item" href="/InseadDataAnalytics/INSEADAnalytics/issues/new" data-ga-click="Header, create new issue">
+      New issue
+    </a>
+
+      </ul>
+    </details>
+  </li>
+
+  <li class="dropdown js-menu-container">
+
+    <details class="dropdown-details details-reset js-dropdown-details d-flex pl-2 flex-items-center">
+      <summary class="HeaderNavlink name mt-1"
+        aria-label="View profile and more"
+        data-ga-click="Header, show menu, icon:avatar">
+        <img alt="@miroslavsala" class="avatar float-left mr-1" src="https://avatars3.githubusercontent.com/u/24554461?s=40&amp;v=4" height="20" width="20">
+        <span class="dropdown-caret"></span>
+      </summary>
+
+      <ul class="dropdown-menu dropdown-menu-sw">
+        <li class="dropdown-header header-nav-current-user css-truncate">
+          Signed in as <strong class="css-truncate-target">miroslavsala</strong>
+        </li>
+
+        <li class="dropdown-divider"></li>
+
+        <li><a class="dropdown-item" href="/miroslavsala" data-ga-click="Header, go to profile, text:your profile">
+          Your profile
+        </a></li>
+        <li><a class="dropdown-item" href="/miroslavsala?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">
+          Your stars
+        </a></li>
+          <li><a class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, your gists, text:your gists">Your Gists</a></li>
+
+        <li class="dropdown-divider"></li>
+
+        <li><a class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">
+          Help
+        </a></li>
+
+        <li><a class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">
+          Settings
+        </a></li>
+
+        <li><!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="bADzI0KHmKwzt3hO9mHKeJ3auDYh14E2ATqxVGc4AG8cSEw8G7GkyeoL1WS1LOEY0Su0vn8I7EOcqoPu1EYx5Q==" /></div>
+          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+            Sign out
+          </button>
+        </form></li>
+      </ul>
+    </details>
+  </li>
+</ul>
+
+
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="sr-only right-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="nK06xciB/vyRp3xxOWc6RTCT6cUxdBcEC6L/zT2JJSXs5YXakbfCmUgb0Vt6KhElfGLlTW+renGWMs13jvcUrw==" /></div>
+          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+            Sign out
+          </button>
+</form>      </div>
+    </div>
+  </div>
+</header>
+
+      
+
+  </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+    <div id="js-flash-container">
+</div>
+
+
+
+  <div role="main" class="application-main ">
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <div id="js-repo-pjax-container" data-pjax-container >
+      
+
+
+
+
+  
+
+
+
+  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav  ">
+    <div class="repohead-details-container clearfix container">
+
+      <ul class="pagehead-actions">
+  <li>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="NedmCT1PQWfSyn4WE2rJDShcQjCtGy/+16DhE1ZOAtjb18+Mllf9GYIIUqB/VaXI4TOisoC2w97B2KU5G7GhUQ==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="15819896" />
+
+        <div class="select-menu js-menu-container js-select-menu">
+          <a href="/InseadDataAnalytics/INSEADAnalytics/subscription"
+            class="btn btn-sm btn-with-count select-menu-button js-menu-target"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-label="Toggle repository notifications menu"
+            data-ga-click="Repository, click Watch settings, action:blob#show">
+            <span class="js-select-button">
+                <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                Watch
+            </span>
+          </a>
+          <a class="social-count js-social-count"
+            href="/InseadDataAnalytics/INSEADAnalytics/watchers"
+            aria-label="43 users are watching this repository">
+            43
+          </a>
+
+        <div class="select-menu-modal-holder">
+          <div class="select-menu-modal subscription-menu-modal js-menu-content">
+            <div class="select-menu-header js-navigation-enable" tabindex="-1">
+              <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+              <span class="select-menu-title">Notifications</span>
+            </div>
+
+              <div class="select-menu-list js-navigation-container" role="menu">
+
+                <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+                  <div class="select-menu-item-text">
+                    <input checked="checked" id="do_included" name="do" type="radio" value="included" />
+                    <span class="select-menu-item-heading">Not watching</span>
+                    <span class="description">Be notified when participating or @mentioned.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                      Watch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+                  <div class="select-menu-item-text">
+                    <input id="do_subscribed" name="do" type="radio" value="subscribed" />
+                    <span class="select-menu-item-heading">Watching</span>
+                    <span class="description">Be notified of all conversations.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                        Unwatch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+                  <div class="select-menu-item-text">
+                    <input id="do_ignore" name="do" type="radio" value="ignore" />
+                    <span class="select-menu-item-heading">Ignoring</span>
+                    <span class="description">Never be notified.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-mute" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"/></svg>
+                        Stop ignoring
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+</form>
+  </li>
+
+  <li>
+    
+  <div class="js-toggler-container js-social-container starring-container ">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/InseadDataAnalytics/INSEADAnalytics/unstar" class="starred js-social-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="0t1WWjkOJSWvDu1w9TjNcIwR42f/U5gx75yjyGYi2MFWCZEn/0T5YJs8CjIsh1bByg5YSH06meuz3VAZQI2pcA==" /></div>
+      <input type="hidden" name="context" value="repository"></input>
+      <button
+        type="submit"
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Unstar this repository" title="Unstar InseadDataAnalytics/INSEADAnalytics"
+        data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="/InseadDataAnalytics/INSEADAnalytics/stargazers"
+           aria-label="42 users starred this repository">
+          42
+        </a>
+</form>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/InseadDataAnalytics/INSEADAnalytics/star" class="unstarred js-social-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="h2AgFRk5jHc7LKK27ibLCDyBzTWL19kPrqRH9iyRvSJmwJ4sqBDkIdiffNiFPHfZ0aVKmLvQ4F5iLJEMcADYrA==" /></div>
+      <input type="hidden" name="context" value="repository"></input>
+      <button
+        type="submit"
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Star this repository" title="Star InseadDataAnalytics/INSEADAnalytics"
+        data-ga-click="Repository, click star button, action:blob#show; text:Star">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="/InseadDataAnalytics/INSEADAnalytics/stargazers"
+           aria-label="42 users starred this repository">
+          42
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/InseadDataAnalytics/INSEADAnalytics/fork" class="btn-with-count" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="EmkcnfbTA/kr2cPPSIAvLQZg6wQqTIwRuyiyqxV5H9ozZTKAsSxMWU9BJgRN17976z9FfHSO/ahs/q51GvzJGg==" /></div>
+            <button
+                type="submit"
+                class="btn btn-sm btn-with-count"
+                data-ga-click="Repository, show fork modal, action:blob#show; text:Fork"
+                title="Fork your own copy of InseadDataAnalytics/INSEADAnalytics to your account"
+                aria-label="Fork your own copy of InseadDataAnalytics/INSEADAnalytics to your account">
+              <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+              Fork
+            </button>
+</form>
+    <a href="/InseadDataAnalytics/INSEADAnalytics/network" class="social-count"
+       aria-label="597 users forked this repository">
+      597
+    </a>
+  </li>
+</ul>
+
+      <h1 class="public ">
+  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+  <span class="author" itemprop="author"><a href="/InseadDataAnalytics" class="url fn" rel="author">InseadDataAnalytics</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="/InseadDataAnalytics/INSEADAnalytics" data-pjax="#js-repo-pjax-container">INSEADAnalytics</a></strong>
+
+</h1>
+
+    </div>
+    
+<nav class="reponav js-repo-nav js-sidenav-container-pjax container"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/InseadDataAnalytics/INSEADAnalytics" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages /InseadDataAnalytics/INSEADAnalytics" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a href="/InseadDataAnalytics/INSEADAnalytics/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /InseadDataAnalytics/INSEADAnalytics/issues" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+        <span itemprop="name">Issues</span>
+        <span class="Counter">51</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/InseadDataAnalytics/INSEADAnalytics/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /InseadDataAnalytics/INSEADAnalytics/pulls" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="Counter">11</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+    <a href="/InseadDataAnalytics/INSEADAnalytics/projects" class="js-selected-navigation-item reponav-item" data-hotkey="g b" data-selected-links="repo_projects new_repo_project repo_project /InseadDataAnalytics/INSEADAnalytics/projects">
+      <svg aria-hidden="true" class="octicon octicon-project" height="16" version="1.1" viewBox="0 0 15 16" width="15"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+      Projects
+      <span class="Counter" >0</span>
+</a>
+    <a href="/InseadDataAnalytics/INSEADAnalytics/wiki" class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /InseadDataAnalytics/INSEADAnalytics/wiki">
+      <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
+      Wiki
+</a>
+
+  <a href="/InseadDataAnalytics/INSEADAnalytics/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors dependency_graph pulse /InseadDataAnalytics/INSEADAnalytics/pulse">
+    <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
+    Insights
+</a>
+
+</nav>
+
+
+  </div>
+
+<div class="container new-discussion-timeline experiment-repo-nav  ">
+  <div class="repository-content ">
+
+    
+  <a href="/InseadDataAnalytics/INSEADAnalytics/blob/ff194a91c6e4d003520685e8f20c7f2e138c054d/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+  <!-- blob contrib key: blob_contributors:v21:84e3859d78652ffb60a605b4191d881d -->
+
+  <div class="file-navigation js-zeroclipboard-container">
+    
+<div class="select-menu branch-select-menu js-menu-container js-select-menu float-left">
+  <button class=" btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    
+    type="button" aria-label="Switch branches or tags" aria-expanded="false" aria-haspopup="true">
+      <i>Branch:</i>
+      <span class="js-select-button css-truncate-target">master</span>
+  </button>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax>
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+        <span class="select-menu-title">Switch branches/tags</span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="form-control js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open "
+               href="/InseadDataAnalytics/INSEADAnalytics/blob/gh-pages/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd"
+               data-name="gh-pages"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                gh-pages
+              </span>
+            </a>
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
+               href="/InseadDataAnalytics/INSEADAnalytics/blob/master/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd"
+               data-name="master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                master
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+    <div class="BtnGroup float-right">
+      <a href="/InseadDataAnalytics/INSEADAnalytics/find/master"
+            class="js-pjax-capture-input btn btn-sm BtnGroup-item"
+            data-pjax
+            data-hotkey="t">
+        Find file
+      </a>
+      <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm BtnGroup-item tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
+    </div>
+    <div class="breadcrumb js-zeroclipboard-target">
+      <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/InseadDataAnalytics/INSEADAnalytics" data-pjax="true"><span>INSEADAnalytics</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/InseadDataAnalytics/INSEADAnalytics/tree/master/CourseSessions" data-pjax="true"><span>CourseSessions</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/InseadDataAnalytics/INSEADAnalytics/tree/master/CourseSessions/InClassProcess" data-pjax="true"><span>InClassProcess</span></a></span><span class="separator">/</span><strong class="final-path">MarketSegmentationProcessInClass.Rmd</strong>
+    </div>
+  </div>
+
+
+  
+  <div class="commit-tease">
+      <span class="float-right">
+        <a class="commit-tease-sha" href="/InseadDataAnalytics/INSEADAnalytics/commit/ff194a91c6e4d003520685e8f20c7f2e138c054d" data-pjax>
+          ff194a9
+        </a>
+        <relative-time datetime="2018-02-08T12:23:04Z">Feb 8, 2018</relative-time>
+      </span>
+      <div>
+        <img alt="@szoumpou" class="avatar" height="20" src="https://avatars1.githubusercontent.com/u/19541382?s=40&amp;v=4" width="20" />
+        <a href="/szoumpou" class="user-mention" rel="contributor">szoumpou</a>
+          <a href="/InseadDataAnalytics/INSEADAnalytics/commit/ff194a91c6e4d003520685e8f20c7f2e138c054d" class="message" data-pjax="true" title="update">update</a>
+      </div>
+
+    <div class="commit-tease-contributors">
+      <button type="button" class="btn-link muted-link contributors-toggle" data-facebox="#blob_contributors_box">
+        <strong>3</strong>
+         contributors
+      </button>
+          <a class="avatar-link tooltipped tooltipped-s" aria-label="tevgeniou" href="/InseadDataAnalytics/INSEADAnalytics/commits/master/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd?author=tevgeniou"><img alt="@tevgeniou" class="avatar" height="20" src="https://avatars2.githubusercontent.com/u/1362763?s=40&amp;v=4" width="20" /> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="vkapartzianis" href="/InseadDataAnalytics/INSEADAnalytics/commits/master/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd?author=vkapartzianis"><img alt="@vkapartzianis" class="avatar" height="20" src="https://avatars1.githubusercontent.com/u/1918344?s=40&amp;v=4" width="20" /> </a>
+    <a class="avatar-link tooltipped tooltipped-s" aria-label="szoumpou" href="/InseadDataAnalytics/INSEADAnalytics/commits/master/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd?author=szoumpou"><img alt="@szoumpou" class="avatar" height="20" src="https://avatars1.githubusercontent.com/u/19541382?s=40&amp;v=4" width="20" /> </a>
+
+
+    </div>
+
+    <div id="blob_contributors_box" style="display:none">
+      <h2 class="facebox-header" data-facebox-id="facebox-header">Users who have contributed to this file</h2>
+      <ul class="facebox-user-list" data-facebox-id="facebox-description">
+          <li class="facebox-user-list-item">
+            <img alt="@tevgeniou" height="24" src="https://avatars3.githubusercontent.com/u/1362763?s=48&amp;v=4" width="24" />
+            <a href="/tevgeniou">tevgeniou</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@vkapartzianis" height="24" src="https://avatars0.githubusercontent.com/u/1918344?s=48&amp;v=4" width="24" />
+            <a href="/vkapartzianis">vkapartzianis</a>
+          </li>
+          <li class="facebox-user-list-item">
+            <img alt="@szoumpou" height="24" src="https://avatars0.githubusercontent.com/u/19541382?s=48&amp;v=4" width="24" />
+            <a href="/szoumpou">szoumpou</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="file">
+    <div class="file-header">
+  <div class="file-actions">
+
+    <div class="BtnGroup">
+      <a href="/InseadDataAnalytics/INSEADAnalytics/raw/master/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd" class="btn btn-sm BtnGroup-item" id="raw-url">Raw</a>
+        <a href="/InseadDataAnalytics/INSEADAnalytics/blame/master/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd" class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b">Blame</a>
+      <a href="/InseadDataAnalytics/INSEADAnalytics/commits/master/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a>
+    </div>
+
+        <a class="btn-octicon tooltipped tooltipped-nw"
+           href="https://desktop.github.com"
+           aria-label="Open this file in GitHub Desktop"
+           data-ga-click="Repository, open with desktop, type:windows">
+            <svg aria-hidden="true" class="octicon octicon-device-desktop" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
+        </a>
+
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/InseadDataAnalytics/INSEADAnalytics/edit/master/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd" class="inline-form js-update-url-with-hash" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="AS7LFP8xIPP7OZFd+uWLif0OBFptu3lEv+J7LX06EUbaoTJRbKD8HgJAj44u9/C6LkCo1nC4qnD2brCWAPOr5Q==" /></div>
+            <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
+              aria-label="Edit the file in your fork of this project" data-hotkey="e" data-disable-with>
+              <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
+            </button>
+</form>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/InseadDataAnalytics/INSEADAnalytics/delete/master/CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Db5VeqpIqlN0IEkOfUJaUGOpvb+pZsu3bSZ97X9WV905vtyTRTsyoc5dQUVIgRoEPnbe2QRI5NzB+JhzHSJVRw==" /></div>
+          <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
+            aria-label="Delete the file in your fork of this project" data-disable-with>
+            <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
+          </button>
+</form>  </div>
+
+  <div class="file-info">
+      1070 lines (792 sloc)
+      <span class="file-info-divider"></span>
+    47.9 KB
+  </div>
+</div>
+
+    
+  <div id="readme" class="readme blob instapaper_body">
+    <article class="markdown-body entry-content" itemprop="text"><table data-table-type="yaml-metadata">
+  <thead>
+  <tr>
+  <th>title</th>
+  <th>author</th>
+  <th>output</th>
+  <th>always_allow_html</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><div>A Market Segmentation and Purchase Drivers Process</div></td>
+  <td><div>T. Evgeniou</div></td>
+  <td><div><table>
+  <thead>
+  <tr>
+  <th>html_document</th>
+  <th>pdf_document</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><div><table>
+  <thead>
+  <tr>
+  <th>css</th>
+  <th>theme</th>
+  <th>toc</th>
+  <th>toc_float</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><div>../../AnalyticsStyles/default.css</div></td>
+  <td><div>paper</div></td>
+  <td><div>true</div></td>
+  <td><div><table>
+  <thead>
+  <tr>
+  <th>collapsed</th>
+  <th>smooth_scroll</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><div>false</div></td>
+  <td><div>true</div></td>
+  </tr>
+  </tbody>
+</table>
+</div></td>
+  </tr>
+  </tbody>
+</table>
+</div></td>
+  <td><div><table>
+  <thead>
+  <tr>
+  <th>includes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><div><table>
+  <thead>
+  <tr>
+  <th>in_header</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><div>../../AnalyticsStyles/default.sty</div></td>
+  </tr>
+  </tbody>
+</table>
+</div></td>
+  </tr>
+  </tbody>
+</table>
+</div></td>
+  </tr>
+  </tbody>
+</table>
+</div></td>
+  <td><div>true</div></td>
+  </tr>
+  </tbody>
+</table>
+
+
+<blockquote>
+<p><strong>IMPORTANT</strong>: Please make sure you create a copy of this file with a customized name, so that your work (e.g. answers to the questions) is not over-written when you pull the latest content from the course github.
+This is a <strong>template process for market segmentation based on survey data</strong>, using the  <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/Boats-A-prerelease.pdf" rel="nofollow">Boats cases A</a> and  <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/Boats-B-prerelease.pdf" rel="nofollow">B</a>.</p>
+</blockquote>
+<p>All material and code is available at the INSEAD Data Science for Business website and GitHub. Before starting, make sure you have pulled the <a href="https://github.com/InseadDataAnalytics/INSEADAnalytics">course files</a> on your GitHub repository. As always, you can use the <code>help</code> command in Rstudio to find out about any R function (e.g. type <code>help(list.files)</code> to learn what the R function <code>list.files</code> does).</p>
+<p><strong>Note:</strong> you can create an html file by running in your console the command
+rmarkdown::render("CourseSessions/InClassProcess/MarketSegmentationProcessInClass.Rmd")
+(see also a <a href="https://github.com/InseadDataAnalytics/INSEADAnalytics/issues/75">potential issue with plots</a>)</p>
+<hr>\clearpage
+<h1><a href="#the-business-questions" aria-hidden="true" class="anchor" id="user-content-the-business-questions"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Business Questions</h1>
+<p>This process can be used as a (starting) template for projects like the one described in the <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/Boats-A-prerelease.pdf" rel="nofollow">Boats cases A</a> and  <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/Boats-B-prerelease.pdf" rel="nofollow">B</a>. For example (but not only), in this case some of the business questions were:</p>
+<ul>
+<li>
+<p>What are the main purchase drivers of the customers (and prospects) of this company?</p>
+</li>
+<li>
+<p>Are there different market segments? Which ones? Do the purchase drivers differ across segments?</p>
+</li>
+<li>
+<p>What (possibly market segment specific) product development or brand positioning strategy should the company follow in order to increase its sales?</p>
+</li>
+</ul>
+<p>See for example some of the analysis of this case in  these slides: <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/Sessions2_3 Handouts.pdf" rel="nofollow"> part 1</a> and <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/Sessions4_5 Handouts.pdf" rel="nofollow"> part 2</a>.</p>
+<hr>\clearpage
+<h1><a href="#the-process" aria-hidden="true" class="anchor" id="user-content-the-process"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Process</h1>
+<p>The "high level" process template is split in 3 parts, corresponding to the course sessions 7-8, 9-10, and an optional last part:</p>
+<ol>
+<li>
+<p><em>Part 1</em>: We use some of the survey questions (e.g. in this case the first 29 "attitude" questions) to find <strong>key customer descriptors</strong> ("factors") using <em>dimensionality reduction</em> techniques described in the <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/CourseSessions/Sessions23/FactorAnalysisReading.html" rel="nofollow">Dimensionality Reduction</a> reading of Sessions 7-8.</p>
+</li>
+<li>
+<p><em>Part 2</em>: We use the selected customer descriptors to <strong>segment the market</strong> using <em>cluster analysis</em> techniques described in the <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/CourseSessions/Sessions45/ClusterAnalysisReading.html" rel="nofollow">Cluster Analysis </a> reading of Sessions 9-10.</p>
+</li>
+<li>
+<p><em>Part 3</em>: For the market segments we create, we will use <em>classification analysis</em> to classify people based on whether or not they have purchased a product and find what are the <strong>key purchase drivers per segment</strong>. For this part we will use <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/CourseSessions/ClassificationProcessCreditCardDefault.html" rel="nofollow">classification analysis </a> techniques.</p>
+</li>
+</ol>
+<p>Finally, we will use the results of this analysis to make business decisions, e.g. about brand positioning, product development, etc., depending on our market segments and key purchase drivers we find at the end of this process.</p>
+<pre lang="{r"><code>suppressWarnings(source("../../AnalyticsLibraries/library.R"))
+# Package options
+suppressWarnings(ggthemr('fresh'))  # ggplot theme
+opts_knit$set(progress=FALSE, verbose=FALSE)
+opts_chunk$set(echo=FALSE, fig.align="center", fig.width=10, fig.height=6.35, results="asis")
+options(knitr.kable.NA = '')
+
+# Run below only once, then comment out
+# New versions of the networkD3 package may not work properly, so install the following version
+packageurl &lt;- "https://cran.r-project.org/src/contrib/Archive/networkD3/networkD3_0.2.13.tar.gz"
+install.packages(packageurl, repos=NULL, type="source")
+</code></pre>
+<hr>\clearpage
+<h1><a href="#the-data" aria-hidden="true" class="anchor" id="user-content-the-data"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The Data</h1>
+<p>First we load the data to use (see the raw .Rmd file to change the data file as needed):</p>
+<pre lang="{r"><code># Please ENTER the name of the file with the data used. The file should be a .csv with one row per observation (e.g. person) and one column per attribute. Do not add .csv at the end, make sure the data are numeric.
+datafile_name = "../Sessions23/data/Boats.csv"
+
+# Please enter the minimum number below which you would like not to print - this makes the readability of the tables easier. Default values are either 10e6 (to print everything) or 0.5. Try both to see the difference.
+MIN_VALUE = 0.5
+
+# Please enter the maximum number of observations to show in the report and slides. 
+# DEFAULT is 10. If the number is large the report may be slow.
+max_data_report = 10
+</code></pre>
+<pre lang="{r}"><code>ProjectData &lt;- read.csv(datafile_name)
+ProjectData &lt;- data.matrix(ProjectData) 
+ProjectData_INITIAL &lt;- ProjectData
+
+</code></pre>
+<hr>\clearpage
+<h1><a href="#part-1-key-customer-characteristics" aria-hidden="true" class="anchor" id="user-content-part-1-key-customer-characteristics"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Part 1: Key Customer Characteristics</h1>
+<p>The code used here is along the lines of the code in the reading  <a href="https://github.com/InseadDataAnalytics/INSEADAnalytics/blob/master/CourseSessions/Sessions23/FactorAnalysisReading.Rmd">FactorAnalysisReading.Rmd</a>. We follow the process described in the <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/CourseSessions/Sessions23/FactorAnalysisReading.html" rel="nofollow">Dimensionality Reduction </a> reading.</p>
+<p>In this part we also become familiar with:</p>
+<ol>
+<li>Some visualization tools;</li>
+<li>Principal Component Analysis and Factor Analysis;</li>
+<li>Introduction to machine learning methods.</li>
+</ol>
+<p>(All user inputs for this part should be selected in the code chunk in the raw .Rmd file)</p>
+<pre lang="{r"><code># Please ENTER the original raw attributes to use. 
+# Please use numbers, not column names, e.g. c(1:5, 7, 8) uses columns 1,2,3,4,5,7,8
+factor_attributes_used = c(2:30)
+
+# Please ENTER the selection criteria for the factors to use. 
+# Choices: "eigenvalue", "variance", "manual"
+factor_selectionciterion = "eigenvalue"
+
+# Please ENTER the desired minumum variance explained 
+# (Only used in case "variance" is the factor selection criterion used). 
+minimum_variance_explained = 65  # between 1 and 100
+
+# Please ENTER the number of factors to use 
+# (Only used in case "manual" is the factor selection criterion used).
+manual_numb_factors_used = 15
+
+# Please ENTER the rotation eventually used (e.g. "none", "varimax", "quatimax", "promax", "oblimin", "simplimax", and "cluster" - see help(principal)). Default is "varimax"
+rotation_used = "varimax"
+
+</code></pre>
+<pre lang="{r}"><code>factor_attributes_used &lt;- intersect(factor_attributes_used, 1:ncol(ProjectData))
+ProjectDataFactor &lt;- ProjectData[,factor_attributes_used]
+ProjectDataFactor &lt;- data.matrix(ProjectDataFactor)
+</code></pre>
+<h2><a href="#steps-1-2-check-the-data" aria-hidden="true" class="anchor" id="user-content-steps-1-2-check-the-data"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Steps 1-2: Check the Data</h2>
+<p>Start by some basic visual exploration of, say, a few data:</p>
+<pre lang="{r}"><code>rownames(ProjectDataFactor) &lt;- paste0("Obs.", sprintf("%02i", 1:nrow(ProjectDataFactor)))
+iprint.df(t(head(round(ProjectDataFactor, 2), max_data_report)))
+</code></pre>
+<p>The data we use here have the following descriptive statistics:</p>
+<pre lang="{r}"><code>iprint.df(round(my_summary(ProjectDataFactor), 2))
+</code></pre>
+<h2><a href="#step-3-check-correlations" aria-hidden="true" class="anchor" id="user-content-step-3-check-correlations"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 3: Check Correlations</h2>
+<p>This is the correlation matrix of the customer responses to the <code>r ncol(ProjectDataFactor)</code> attitude questions - which are the only questions that we will use for the segmentation (see the case):</p>
+<pre lang="{r}"><code>thecor = round(cor(ProjectDataFactor),2)
+iprint.df(round(thecor,2), scale=TRUE)
+</code></pre>
+<p><strong>Questions</strong></p>
+<ol>
+<li>Do you see any high correlations between the responses? Do they make sense?</li>
+<li>What do these correlations imply?</li>
+</ol>
+<p><strong>Answers:</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h2><a href="#step-4-choose-number-of-factors" aria-hidden="true" class="anchor" id="user-content-step-4-choose-number-of-factors"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 4: Choose number of factors</h2>
+<p>Clearly the survey asked many redundant questions (can you think some reasons why?), so we may be able to actually "group" these 29 attitude questions into only a few "key factors". This not only will simplify the data, but will also greatly facilitate our understanding of the customers.</p>
+<p>To do so, we use methods called <a href="https://en.wikipedia.org/wiki/Principal_component_analysis" rel="nofollow">Principal Component Analysis</a> and <a href="https://en.wikipedia.org/wiki/Factor_analysis" rel="nofollow">factor analysis</a> as also discussed in the <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/CourseSessions/Sessions23/FactorAnalysisReading.html" rel="nofollow">Dimensionality Reduction readings</a>. We can use two different R commands for this (they make slightly different information easily available as output): the command <code>principal</code> (check <code>help(principal)</code> from R package <a href="http://personality-project.org/r/psych/" rel="nofollow">psych</a>), and the command <code>PCA</code> from R package <a href="http://factominer.free.fr" rel="nofollow">FactoMineR</a> - there are more packages and commands for this, as these methods are very widely used.</p>
+<pre lang="{r}"><code># Here is how the `principal` function is used 
+UnRotated_Results&lt;-principal(ProjectDataFactor, nfactors=ncol(ProjectDataFactor), rotate="none",score=TRUE)
+UnRotated_Factors&lt;-round(UnRotated_Results$loadings,2)
+UnRotated_Factors&lt;-as.data.frame(unclass(UnRotated_Factors))
+colnames(UnRotated_Factors)&lt;-paste("Comp",1:ncol(UnRotated_Factors),sep="")
+</code></pre>
+<pre lang="{r}"><code># Here is how we use the `PCA` function 
+Variance_Explained_Table_results&lt;-PCA(ProjectDataFactor, graph=FALSE)
+Variance_Explained_Table&lt;-Variance_Explained_Table_results$eig
+Variance_Explained_Table_copy&lt;-Variance_Explained_Table
+
+rownames(Variance_Explained_Table) &lt;- paste("Component", 1:nrow(Variance_Explained_Table), sep=" ")
+colnames(Variance_Explained_Table) &lt;- c("Eigenvalue", "Pct of explained variance", "Cumulative pct of explained variance")
+</code></pre>
+<p>Let's look at the <strong>variance explained</strong> as well as the <strong>eigenvalues</strong> (see session readings):</p>
+<pre lang="{r}"><code>iprint.df(round(Variance_Explained_Table, 2))
+</code></pre>
+<pre lang="{r}"><code>eigenvalues  &lt;- Variance_Explained_Table[, "Eigenvalue"]
+df           &lt;- cbind(as.data.frame(eigenvalues), c(1:length(eigenvalues)), rep(1, length(eigenvalues)))
+colnames(df) &lt;- c("eigenvalues", "components", "abline")
+iplot.df(melt(df, id="components"))
+</code></pre>
+<p><strong>Questions:</strong></p>
+<ol>
+<li>Can you explain what this table and the plot are? What do they indicate? What can we learn from these?</li>
+<li>Why does the plot have this specific shape? Could the plotted line be increasing?</li>
+<li>What characteristics of these results would we prefer to see? Why?</li>
+</ol>
+<p><strong>Answers</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h2><a href="#step-5-interpret-the-factors" aria-hidden="true" class="anchor" id="user-content-step-5-interpret-the-factors"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 5: Interpret the factors</h2>
+<p>Let's now see how the "top factors" look like.</p>
+<pre lang="{r}"><code>if (factor_selectionciterion == "eigenvalue")
+  factors_selected = sum(Variance_Explained_Table_copy[,1] &gt;= 1)
+if (factor_selectionciterion == "variance")
+  factors_selected = 1:head(which(Variance_Explained_Table_copy[,"cumulative percentage of variance"]&gt;= minimum_variance_explained),1)
+if (factor_selectionciterion == "manual")
+  factors_selected = manual_numb_factors_used
+</code></pre>
+<p>To better visualize them, we will use what is called a "rotation". There are many rotation methods. In this case we selected the <code>r rotation_used</code> rotation. For our data, the <code>r factors_selected</code> selected factors look as follows after this rotation:</p>
+<pre lang="{r}"><code>Rotated_Results&lt;-principal(ProjectDataFactor, nfactors=max(factors_selected), rotate=rotation_used,score=TRUE)
+Rotated_Factors&lt;-round(Rotated_Results$loadings,2)
+Rotated_Factors&lt;-as.data.frame(unclass(Rotated_Factors))
+colnames(Rotated_Factors)&lt;-paste("Comp.",1:ncol(Rotated_Factors),sep="")
+
+sorted_rows &lt;- sort(Rotated_Factors[,1], decreasing = TRUE, index.return = TRUE)$ix
+Rotated_Factors &lt;- Rotated_Factors[sorted_rows,]
+
+iprint.df(Rotated_Factors, scale=TRUE)
+</code></pre>
+<p>To better visualize and interpret the factors we often "suppress" loadings with small values, e.g. with absolute values smaller than 0.5. In this case our factors look as follows after suppressing the small numbers:</p>
+<pre lang="{r}"><code>Rotated_Factors_thres &lt;- Rotated_Factors
+Rotated_Factors_thres[abs(Rotated_Factors_thres) &lt; MIN_VALUE]&lt;-NA
+colnames(Rotated_Factors_thres)&lt;- colnames(Rotated_Factors)
+rownames(Rotated_Factors_thres)&lt;- rownames(Rotated_Factors)
+
+iprint.df(Rotated_Factors_thres, scale=TRUE)
+</code></pre>
+<p><strong>Questions</strong></p>
+<ol>
+<li>What do the first couple of factors mean? Do they make business sense?</li>
+<li>How many factors should we choose for this data/customer base? Please try a few and explain your final choice based on a) statistical arguments, b) on interpretation arguments, c) on business arguments (<strong>you need to consider all three types of arguments</strong>)</li>
+<li>How would you interpret the factors you selected?</li>
+<li>What lessons about data science do you learn when doing this analysis? Please comment.</li>
+</ol>
+<p><strong>Answers</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h2><a href="#step-6--save-factor-scores" aria-hidden="true" class="anchor" id="user-content-step-6--save-factor-scores"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 6:  Save factor scores</h2>
+<p>We can now either replace all initial variables used in this part with the factor scores, or just select one of the initial variables for each of the selected factors in order to represent that factor. Here is how the factor scores  are for the first few respondents:</p>
+<pre lang="{r}"><code>NEW_ProjectData &lt;- round(Rotated_Results$scores[,1:factors_selected,drop=F],2)
+colnames(NEW_ProjectData)&lt;-paste("DV (Factor)",1:ncol(NEW_ProjectData),sep=" ")
+
+iprint.df(t(head(NEW_ProjectData, 10)), scale=TRUE)
+</code></pre>
+<p><strong>Questions</strong></p>
+<ol>
+<li>Can you describe some of the people using the new derived variables (factor scores)?</li>
+<li>Which of the 29 initial variables would you select to represent each of the factors you selected?</li>
+</ol>
+<p><strong>Answers</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<hr>\clearpage
+<h1><a href="#part-2-customer-segmentation" aria-hidden="true" class="anchor" id="user-content-part-2-customer-segmentation"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Part 2: Customer Segmentation</h1>
+<p>The code used here is along the lines of the code in the reading  <a href="https://github.com/InseadDataAnalytics/INSEADAnalytics/blob/master/CourseSessions/Sessions45/ClusterAnalysisReading.Rmd">ClusterAnalysisReading.Rmd</a>. We follow the process described in the <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/CourseSessions/Sessions45/ClusterAnalysisReading.html" rel="nofollow">Cluster Analysis </a> reading.</p>
+<p>In this part we also become familiar with:</p>
+<ol>
+<li>Some clustering Methods;</li>
+<li>How these tools can be used in practice.</li>
+</ol>
+<p>A key family of methods used for segmentation is what is called <strong>clustering methods</strong>. This is a very important problem in statistics and <strong>machine learning</strong>, used in all sorts of applications such as in <a href="http://www.cs.umd.edu/%7Esamir/498/Amazon-Recommendations.pdf" rel="nofollow">Amazon's pioneer work on recommender systems</a>. There are many <em>mathematical methods</em> for clustering. We will use two very standard methods, <strong>hierarchical clustering</strong> and <strong>k-means</strong>. While the "math" behind all these methods can be complex, the R functions used are relatively simple to use, as we will see.</p>
+<p>(All user inputs for this part should be selected in the code chunk in the raw .Rmd file)</p>
+<pre lang="{r"><code># Please ENTER then original raw attributes to use for the segmentation (the "segmentation attributes")
+# Please use numbers, not column names, e.g. c(1:5, 7, 8) uses columns 1,2,3,4,5,7,8
+segmentation_attributes_used = c(28,25,27,14,20,8,3,12,13,5,9,11,2,30,24) #c(10,19,5,12,3) 
+
+# Please ENTER then original raw attributes to use for the profiling of the segments (the "profiling attributes")
+# Please use numbers, not column names, e.g. c(1:5, 7, 8) uses columns 1,2,3,4,5,7,8
+profile_attributes_used = c(2:82) 
+
+# Please ENTER the number of clusters to eventually use for this report
+numb_clusters_used = 7 # for boats possibly use 5, for Mall_Visits use 3
+
+# Please enter the method to use for the segmentation:
+profile_with = "hclust" #  "hclust" or "kmeans"
+
+# Please ENTER the distance metric eventually used for the clustering in case of hierarchical clustering 
+# (e.g. "euclidean", "maximum", "manhattan", "canberra", "binary" or "minkowski" - see help(dist)). 
+# DEFAULT is "euclidean"
+distance_used = "euclidean"
+
+# Please ENTER the hierarchical clustering method to use (options are:
+# "ward", "single", "complete", "average", "mcquitty", "median" or "centroid").
+# DEFAULT is "ward"
+hclust_method = "ward.D"
+
+# Please ENTER the kmeans clustering method to use (options are:
+# "Hartigan-Wong", "Lloyd", "Forgy", "MacQueen").
+# DEFAULT is "Lloyd"
+kmeans_method = "Lloyd"
+
+</code></pre>
+<pre lang="{r}"><code># Same as the initial data
+ProjectData &lt;- ProjectData_INITIAL
+
+segmentation_attributes_used &lt;- intersect(segmentation_attributes_used, 1:ncol(ProjectData))
+profile_attributes_used &lt;- intersect(profile_attributes_used, 1:ncol(ProjectData))
+
+ProjectData_segment &lt;- ProjectData[,segmentation_attributes_used]
+ProjectData_profile &lt;- ProjectData[,profile_attributes_used]
+
+ProjectData_scaled &lt;- apply(ProjectData, 2, function(r) if (sd(r)!=0) (r-mean(r))/sd(r) else 0*r)
+</code></pre>
+<h2><a href="#steps-1-2-explore-the-data" aria-hidden="true" class="anchor" id="user-content-steps-1-2-explore-the-data"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Steps 1-2: Explore the data</h2>
+<p>(This was done above, so we skip it)</p>
+<h2><a href="#step-3-select-segmentation-variables" aria-hidden="true" class="anchor" id="user-content-step-3-select-segmentation-variables"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 3. Select Segmentation Variables</h2>
+<p>For simplicity will use one representative question for each of the factor we found in Part 1 (we can also use the "factor scores" for each respondent) to represent our survey respondents. These are the <code>segmentation_attributes_used</code> selected below. We can choose the question with the highest absolute factor loading for each factor. For example, when we use 5 factors with the varimax rotation we can select questions Q.1.9 (I see my boat as a status symbol), Q1.18 (Boating gives me a feeling of adventure), Q1.4 (I only consider buying a boat from a reputable brand), Q1.11 (I tend to perform minor boat repairs and maintenance on my own) and Q1.2 (When buying a boat  getting the lowest price is more important than the boat brand) - try it. These are columns 10, 19, 5, 12, and 3, respectively of the data matrix <code>Projectdata</code>.</p>
+<h2><a href="#step-4-define-similarity-measure" aria-hidden="true" class="anchor" id="user-content-step-4-define-similarity-measure"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 4: Define similarity measure</h2>
+<p>We need to define a distance metric that measures how different people (observations in general) are from each other. This can be an important choice. Here are the differences between the observations using the distance metric we selected:</p>
+<pre lang="{r}"><code>euclidean_pairwise &lt;- as.matrix(dist(head(ProjectData_segment, max_data_report), method="euclidean"))
+euclidean_pairwise &lt;- euclidean_pairwise*lower.tri(euclidean_pairwise) + euclidean_pairwise*diag(euclidean_pairwise) + 10e10*upper.tri(euclidean_pairwise)
+euclidean_pairwise[euclidean_pairwise==10e10] &lt;- NA
+rownames(euclidean_pairwise) &lt;- colnames(euclidean_pairwise) &lt;- sprintf("Obs.%02d", 1:max_data_report)
+
+iprint.df(round(euclidean_pairwise))
+</code></pre>
+<h2><a href="#step-5-visualize-pair-wise-distances" aria-hidden="true" class="anchor" id="user-content-step-5-visualize-pair-wise-distances"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 5: Visualize Pair-wise Distances</h2>
+<p>We can see the histogram of, say, the first 2 variables (can you change the code chunk in the raw .Rmd file to see other variables?)</p>
+<pre lang="{r}"><code>variables_to_plot = 1:2
+do.call(iplot.grid, lapply(variables_to_plot, function(n){
+  iplot.hist(ProjectData_segment[, n], breaks=10, xlab = paste("Variable", n))
+}))
+</code></pre>
+<p>or the histogram of all pairwise distances for the <code>r distance_used</code> distance:</p>
+<pre lang="{r}"><code>Pairwise_Distances &lt;- dist(ProjectData_segment, method = distance_used) 
+iplot.hist(Pairwise_Distances, breaks=10)
+</code></pre>
+<h2><a href="#step-6-method-and-number-of-segments" aria-hidden="true" class="anchor" id="user-content-step-6-method-and-number-of-segments"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 6: Method and Number of Segments</h2>
+<p>We need to select the clustering method to use, as well as the number of cluster. It may be useful to see the dendrogram from Hierarchical Clustering, to have a quick idea of how the data may be segmented and how many segments there may be. Here is the dendrogram for our data:</p>
+<pre lang="{r}"><code>Hierarchical_Cluster_distances &lt;- dist(ProjectData_segment, method=distance_used)
+Hierarchical_Cluster &lt;- hclust(Hierarchical_Cluster_distances, method=hclust_method)
+# Display dendogram
+iplot.dendrogram(Hierarchical_Cluster)
+# TODO: Draw dendogram with red borders around the 3 clusters
+#rect.hclust(Hierarchical_Cluster, k=numb_clusters_used, border="red") 
+</code></pre>
+<p>We can also plot the "distances" traveled before we need to merge any of the lower and smaller in size clusters into larger ones - the heights of the tree branches that link the clusters as we traverse the tree from its leaves to its root. If we have n observations, this plot has n-1 numbers, we see the first 20 here.</p>
+<pre lang="{r}"><code>num &lt;- nrow(ProjectData) - 1
+df1 &lt;- cbind(as.data.frame(Hierarchical_Cluster$height[length(Hierarchical_Cluster$height):1]), c(1:num))
+colnames(df1) &lt;- c("distances","index")
+iplot.df(melt(head(df1, 20), id="index"), xlab="Number of Components")
+</code></pre>
+<p>Here is the segment membership of the first <code>r max_data_report</code> respondents if we use hierarchical clustering:</p>
+<pre lang="{r}"><code>cluster_memberships_hclust &lt;- as.vector(cutree(Hierarchical_Cluster, k=numb_clusters_used)) # cut tree into as many clusters as numb_clusters_used
+cluster_ids_hclust=unique(cluster_memberships_hclust)
+
+ProjectData_with_hclust_membership &lt;- cbind(1:length(cluster_memberships_hclust),cluster_memberships_hclust)
+colnames(ProjectData_with_hclust_membership)&lt;-c("Observation Number","Cluster_Membership")
+
+iprint.df(round(head(ProjectData_with_hclust_membership, max_data_report), 2))
+</code></pre>
+<p>while this is the segment membership if we use k-means:</p>
+<pre lang="{r}"><code>kmeans_clusters &lt;- kmeans(ProjectData_segment,centers= numb_clusters_used, iter.max=2000, algorithm=kmeans_method)
+
+ProjectData_with_kmeans_membership &lt;- cbind(1:length(kmeans_clusters$cluster),kmeans_clusters$cluster)
+colnames(ProjectData_with_kmeans_membership)&lt;-c("Observation Number","Cluster_Membership")
+
+iprint.df(round(head(ProjectData_with_kmeans_membership, max_data_report), 2))
+</code></pre>
+<h2><a href="#step-7-profile-and-interpret-the-segments" aria-hidden="true" class="anchor" id="user-content-step-7-profile-and-interpret-the-segments"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 7: Profile and interpret the segments</h2>
+<p>In market segmentation one may use variables to <strong>profile</strong> the segments which are not the same (necessarily) as those used to <strong>segment</strong> the market: the latter may be, for example, attitude/needs related (you define segments based on what the customers "need"), while the former may be any information that allows a company to identify the defined customer segments (e.g. demographics, location, etc). Of course deciding which variables to use for segmentation and which to use for profiling (and then <strong>activation</strong> of the segmentation for business purposes) is largely subjective.  In this case we can use all survey questions for profiling for now - the <code>profile_attributes_used</code> variables selected below.</p>
+<p>There are many ways to do the profiling of the segments. For example, here we show how the <em>average</em> answers of the respondents <em>in each segment</em> compare to the <em>average answer of all respondents</em> using the ratio of the two.  The idea is that if in a segment the average response to a question is very different (e.g. away from ratio of 1) than the overall average, then that question may indicate something about the segment relative to the total population.</p>
+<p>Here are for example the profiles of the segments using the clusters found above.  First let's see just the average answer people gave to each question for the different segments as well as the total population:</p>
+<pre lang="{r}"><code>cluster_memberships_kmeans &lt;- kmeans_clusters$cluster 
+cluster_ids_kmeans &lt;- unique(cluster_memberships_kmeans)
+
+if (profile_with == "hclust"){
+  cluster_memberships &lt;- cluster_memberships_hclust
+  cluster_ids &lt;-  cluster_ids_hclust  
+}
+if (profile_with == "kmeans"){
+  cluster_memberships &lt;- cluster_memberships_kmeans
+  cluster_ids &lt;-  cluster_ids_kmeans
+}
+
+# WE WILL USE THESE IN THE CLASSIFICATION PART LATER
+NewData = matrix(cluster_memberships,ncol=1)
+
+population_average = matrix(apply(ProjectData_profile, 2, mean), ncol=1)
+colnames(population_average) &lt;- "Population"
+Cluster_Profile_mean &lt;- sapply(sort(cluster_ids), function(i) apply(ProjectData_profile[(cluster_memberships==i), ], 2, mean))
+if (ncol(ProjectData_profile) &lt;2)
+  Cluster_Profile_mean=t(Cluster_Profile_mean)
+colnames(Cluster_Profile_mean) &lt;- paste("Seg.", 1:length(cluster_ids), sep="")
+cluster.profile &lt;- cbind (population_average,Cluster_Profile_mean)
+
+iprint.df(round(cluster.profile, 2))
+</code></pre>
+<p>We can also "visualize" the segments using <strong>snake plots</strong> for each cluster. For example, we can plot the means of the profiling variables for each of our clusters to better visualize differences between segments. For better visualization we plot the standardized profiling variables.</p>
+<pre lang="{r}"><code>ProjectData_scaled_profile = ProjectData_scaled[, profile_attributes_used,drop=F]
+
+Cluster_Profile_standar_mean &lt;- sapply(sort(cluster_ids), function(i) apply(ProjectData_scaled_profile[(cluster_memberships==i), ,drop = F], 2, mean))
+if (ncol(ProjectData_scaled_profile) &lt; 2)
+  Cluster_Profile_standar_mean = t(Cluster_Profile_standar_mean)
+colnames(Cluster_Profile_standar_mean) &lt;- paste("Seg ", 1:length(cluster_ids), sep="")
+
+iplot.df(melt(cbind.data.frame(idx=as.numeric(1:nrow(Cluster_Profile_standar_mean)), Cluster_Profile_standar_mean), id="idx"), xlab="Profiling variables (standardized)",  ylab="Mean of cluster")
+</code></pre>
+<p>We can also compare the averages of the profiling variables of each segment relative to the average of the variables across the whole population. This can also help us better understand whether  there are indeed clusters in our data (e.g. if all segments are much like the overall population, there may be no segments). For example, we can measure the ratios of the average for each cluster to the average of the population, minus 1, (e.g. <code>avg(cluster)</code> <code>/</code> <code>avg(population)</code> <code>-1</code>) for each segment and variable:</p>
+<pre lang="{r}"><code>population_average_matrix &lt;- population_average[,"Population",drop=F] %*% matrix(rep(1,ncol(Cluster_Profile_mean)),nrow=1)
+cluster_profile_ratios &lt;- (ifelse(population_average_matrix==0, 0,Cluster_Profile_mean/population_average_matrix))
+colnames(cluster_profile_ratios) &lt;- paste("Seg.", 1:ncol(cluster_profile_ratios), sep="")
+rownames(cluster_profile_ratios) &lt;- colnames(ProjectData)[profile_attributes_used]
+## printing the result in a clean-slate table
+iprint.df(round(cluster_profile_ratios-1, 2))
+</code></pre>
+<p><strong>Questions</strong></p>
+<ol>
+<li>What do the numbers in the last table indicate? What numbers are the more informative?</li>
+<li>Based on the tables and snake plot above, what are some key features of each of the segments of this solution?</li>
+</ol>
+<p><strong>Answers</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h2><a href="#step-8-robustness-analysis" aria-hidden="true" class="anchor" id="user-content-step-8-robustness-analysis"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 8: Robustness Analysis</h2>
+<p>We should also consider the robustness of our analysis as we change the clustering method and parameters. Once we are comfortable with the solution we can finally answer our first business questions:</p>
+<p><strong>Questions</strong></p>
+<ol>
+<li>How many segments are there in our market? How many do you select and why? Try a few and explain your final choice based on a) statistical arguments, b) on interpretation arguments, c) on business arguments (<strong>you need to consider all three types of arguments</strong>)</li>
+<li>Can you describe the segments you found based on the profiles?</li>
+<li>What if you change the number of factors and in general you <em>iterate the whole analysis</em>? <strong>Iterations</strong> are key in data science.</li>
+<li>Can you now answer the <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/Boats-A-prerelease.pdf" rel="nofollow">Boats case questions</a>? What business decisions do you recommend to this company based on your analysis?</li>
+</ol>
+<p><strong>Answers</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<hr>\clearpage
+<h1><a href="#part-3-purchase-drivers" aria-hidden="true" class="anchor" id="user-content-part-3-purchase-drivers"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Part 3: Purchase Drivers</h1>
+<p>We will now use the <a href="http://inseaddataanalytics.github.io/INSEADAnalytics/CourseSessions/Sessions67/ClassificationAnalysisReading.html" rel="nofollow">classification analysis </a> methods to understand the key purchase drivers for boats (a similar analysis can be done for recommendation drivers). For simplicity we do not follow the "generic" steps of classification discussed in that reading, and only consider the classification and purchase drivers analysis for the segments we found above.</p>
+<p>We are interested in understanding the purchase drivers, hence our <strong>dependent</strong> variable is column 82 of the Boats data (<code>r colnames(ProjectData)[82]</code>) - why is that? We will use only the subquestions of <strong>Question 16</strong> of the case for now, and also select some of the parameters for this part of the analysis:</p>
+<pre lang="{r"><code># Please ENTER the class (dependent) variable:
+# Please use numbers, not column names! e.g. 82 uses the 82nd column are dependent variable.
+# YOU NEED TO MAKE SURE THAT THE DEPENDENT VARIABLES TAKES ONLY 2 VALUES: 0 and 1!!!
+dependent_variable= 82
+
+# Please ENTER the attributes to use as independent variables 
+# Please use numbers, not column names! e.g. c(1:5, 7, 8) uses columns 1,2,3,4,5,7,8
+independent_variables= c(54:80) # use 54-80 for boats
+
+# Please ENTER the profit/cost values for the correctly and wrong classified data:
+actual_1_predict_1 = 100
+actual_1_predict_0 = -75
+actual_0_predict_1 = -50
+actual_0_predict_0 = 0
+
+# Please ENTER the probability threshold above which an observations  
+# is predicted as class 1:
+Probability_Threshold=50 # between 1 and 99%
+
+# Please ENTER the percentage of data used for estimation
+estimation_data_percent = 80
+validation_data_percent = 10
+
+# Please enter 0 if you want to "randomly" split the data in estimation and validation/test
+random_sampling = 0
+
+# Tree parameter
+# PLEASE ENTER THE Tree (CART) complexity control cp (e.g. 0.001 to 0.02, depending on the data)
+CART_cp = 0.01
+
+# Please enter the minimum size of a segment for the analysis to be done only for that segment
+min_segment = 100
+</code></pre>
+<pre lang="{r}"><code>ProjectData = ProjectData_INITIAL # Just to initialize the data
+
+Probability_Threshold = Probability_Threshold/100 # make it between 0 and 1
+
+dependent_variable = unique(sapply(dependent_variable,function(i) min(ncol(ProjectData), max(i,1))))
+independent_variables = unique(sapply(independent_variables,function(i) min(ncol(ProjectData), max(i,1))))
+
+if (length(unique(ProjectData[,dependent_variable])) !=2){
+  cat("\n*****\n BE CAREFUL, THE DEPENDENT VARIABLE TAKES MORE THAN 2 VALUES...")
+  cat("\nSplitting it around its median...\n*****\n ")
+  new_dependent = ProjectData[,dependent_variable] &gt;= median(ProjectData[,dependent_variable])
+  ProjectData[,dependent_variable] &lt;- 1*new_dependent
+}
+
+Profit_Matrix = matrix(c(actual_1_predict_1, actual_0_predict_1, actual_1_predict_0, actual_0_predict_0), ncol=2)
+colnames(Profit_Matrix)&lt;- c("Predict 1", "Predict 0")
+rownames(Profit_Matrix) &lt;- c("Actual 1", "Actual 0")
+test_data_percent = 100-estimation_data_percent-validation_data_percent
+CART_control = rpart.control(cp = CART_cp)
+</code></pre>
+<p><strong>Questions</strong></p>
+<ol>
+<li>How do you select the profit/cost values for the analysis? Does the variable <code>r Profit_Matrix</code> above relate to the final business decisions? How?</li>
+<li>What does the variable "Probability_Threshold" affect? Does it relate to the final business decisions? How?</li>
+</ol>
+<p><strong>Answers</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>We will use two classification trees and logistic regression. You can select "complexity" control for one of the classification trees in the code chunk of the raw .Rmd file here</p>
+<pre lang="{r"><code>CART_control = 0.001
+</code></pre>
+<p><strong>Question</strong></p>
+<ol>
+<li>How can this parameter affect the final results? What business implications can this parameter choice have?</li>
+</ol>
+<p><strong>Answer</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p>This is a "small tree" classification for example:</p>
+<pre lang="{r}"><code># FIrst we split the data in estimation, validation, and test
+
+if (random_sampling){
+  estimation_data_ids=sample.int(nrow(ProjectData),floor(estimation_data_percent*nrow(ProjectData)/100))
+  non_estimation_data = setdiff(1:nrow(ProjectData),estimation_data_ids)
+  validation_data_ids=non_estimation_data[sample.int(length(non_estimation_data), floor(validation_data_percent/(validation_data_percent+test_data_percent)*length(non_estimation_data)))]
+  } else {
+    estimation_data_ids=1:floor(estimation_data_percent*nrow(ProjectData)/100)
+    non_estimation_data = setdiff(1:nrow(ProjectData),estimation_data_ids)
+    validation_data_ids = (tail(estimation_data_ids,1)+1):(tail(estimation_data_ids,1) + floor(validation_data_percent/(validation_data_percent+test_data_percent)*length(non_estimation_data)))
+    }
+
+test_data_ids = setdiff(1:nrow(ProjectData), union(estimation_data_ids,validation_data_ids))
+
+estimation_data=ProjectData[estimation_data_ids,]
+validation_data=ProjectData[validation_data_ids,]
+test_data=ProjectData[test_data_ids,]
+</code></pre>
+<pre lang="{r}"><code># just name the variables numerically so that they look ok on the tree plots
+independent_variables_nolabel = paste("IV", 1:length(independent_variables), sep="")
+
+estimation_data_nolabel = cbind(estimation_data[,dependent_variable], estimation_data[,independent_variables])
+colnames(estimation_data_nolabel)&lt;- c(colnames(estimation_data)[dependent_variable],independent_variables_nolabel)
+
+validation_data_nolabel = cbind(validation_data[,dependent_variable], validation_data[,independent_variables])
+colnames(validation_data_nolabel)&lt;- c(dependent_variable,independent_variables_nolabel)
+
+test_data_nolabel = cbind(test_data[,dependent_variable], test_data[,independent_variables])
+colnames(test_data_nolabel)&lt;- c(dependent_variable,independent_variables_nolabel)
+
+estimation_data_nolabel = data.frame(estimation_data_nolabel)
+validation_data_nolabel = data.frame(validation_data_nolabel)
+test_data_nolabel = data.frame(test_data_nolabel)
+
+estimation_data = data.frame(estimation_data)
+validation_data = data.frame(validation_data)
+test_data = data.frame(test_data)
+</code></pre>
+<pre lang="{r}"><code>formula=paste(colnames(estimation_data)[dependent_variable],paste(Reduce(paste,sapply(head(independent_variables_nolabel,-1), function(i) paste(i,"+",sep=""))),tail(independent_variables_nolabel,1),sep=""),sep="~")
+CART_tree&lt;-rpart(formula, data= estimation_data_nolabel,method="class", control=CART_control)
+
+rpart.plot(CART_tree, box.palette="OrBu", type=3, extra=1, fallen.leaves=F, branch.lty=3)
+</code></pre>
+<pre lang="{r}"><code>CART_tree_large&lt;-rpart(formula, data= estimation_data_nolabel,method="class", control=rpart.control(cp = 0.005))
+</code></pre>
+<pre lang="{r}"><code># Let's first calculate all probabilites for the estimation, validation, and test data
+estimation_Probability_class1_tree&lt;-predict(CART_tree, estimation_data_nolabel)[,2]
+estimation_Probability_class1_tree_large&lt;-predict(CART_tree_large, estimation_data_nolabel)[,2]
+
+validation_Probability_class1_tree&lt;-predict(CART_tree, validation_data_nolabel)[,2]
+validation_Probability_class1_tree_large&lt;-predict(CART_tree_large, validation_data_nolabel)[,2]
+
+test_Probability_class1_tree&lt;-predict(CART_tree, test_data_nolabel)[,2]
+test_Probability_class1_tree_large&lt;-predict(CART_tree_large, test_data_nolabel)[,2]
+
+
+estimation_prediction_class_tree=1*as.vector(estimation_Probability_class1_tree &gt; Probability_Threshold)
+estimation_prediction_class_tree_large=1*as.vector(estimation_Probability_class1_tree_large &gt; Probability_Threshold)
+
+validation_prediction_class_tree=1*as.vector(validation_Probability_class1_tree &gt; Probability_Threshold)
+validation_prediction_class_tree_large=1*as.vector(validation_Probability_class1_tree_large &gt; Probability_Threshold)
+
+test_prediction_class_tree=1*as.vector(test_Probability_class1_tree &gt; Probability_Threshold)
+test_prediction_class_tree_large=1*as.vector(test_Probability_class1_tree_large &gt; Probability_Threshold)
+</code></pre>
+<pre lang="{r}"><code>formula_log=paste(colnames(estimation_data[,dependent_variable,drop=F]),paste(Reduce(paste,sapply(head(independent_variables,-1), function(i) paste(colnames(estimation_data)[i],"+",sep=""))),colnames(estimation_data)[tail(independent_variables,1)],sep=""),sep="~")
+
+logreg_solution &lt;- glm(formula_log, family=binomial(link="logit"),  data=estimation_data)
+
+log_coefficients = round(summary(logreg_solution)$coefficients,1)
+</code></pre>
+<pre lang="{r}"><code>estimation_Probability_class1_log&lt;-predict(logreg_solution, type="response", newdata=estimation_data[,independent_variables])
+validation_Probability_class1_log&lt;-predict(logreg_solution, type="response", newdata=validation_data[,independent_variables])
+test_Probability_class1_log&lt;-predict(logreg_solution, type="response", newdata=test_data[,independent_variables])
+
+estimation_prediction_class_log=1*as.vector(estimation_Probability_class1_log &gt; Probability_Threshold)
+validation_prediction_class_log=1*as.vector(validation_Probability_class1_log &gt; Probability_Threshold)
+test_prediction_class_log=1*as.vector(test_Probability_class1_log &gt; Probability_Threshold)
+</code></pre>
+<p>After also running the large tree and the logistic regression classifiers, we can then check how much "weight" these three methods put on the different purchase drivers (Q16 of the survey):</p>
+<pre lang="{r}"><code>log_importance = tail(log_coefficients[,"z value", drop=F],-1) # remove the intercept
+log_importance = log_importance/max(abs(log_importance))
+
+tree_importance = CART_tree$variable.importance
+tree_ordered_drivers = as.numeric(gsub("\\IV"," ",names(CART_tree$variable.importance)))
+tree_importance_final = rep(0,length(independent_variables))
+tree_importance_final[tree_ordered_drivers] &lt;- tree_importance
+tree_importance_final &lt;- tree_importance_final/max(abs(tree_importance_final))
+tree_importance_final &lt;- tree_importance_final*sign(log_importance)
+
+large_tree_importance = CART_tree_large$variable.importance
+large_tree_ordered_drivers = as.numeric(gsub("\\IV"," ",names(CART_tree_large$variable.importance)))
+large_tree_importance_final = rep(0,length(independent_variables))
+large_tree_importance_final[large_tree_ordered_drivers] &lt;- large_tree_importance
+large_tree_importance_final &lt;- large_tree_importance_final/max(abs(large_tree_importance_final))
+large_tree_importance_final &lt;- large_tree_importance_final*sign(log_importance)
+
+Importance_table &lt;- cbind(tree_importance_final,large_tree_importance_final, log_importance)
+colnames(Importance_table) &lt;- c("CART 1", "CART 2", "Logistic Regr.")
+rownames(Importance_table) &lt;- rownames(log_importance)
+
+iprint.df(Importance_table)
+</code></pre>
+<p>Finally, if we were to use the estimated classification models on the test data, we would get the following profit curves (see the raw .Rmd file to select the business profit parameters).</p>
+<p>The profit curve using the small classification tree:</p>
+<pre lang="{r}"><code>actual_class&lt;- test_data[,dependent_variable]
+
+probs = test_Probability_class1_tree
+xaxis = sort(unique(c(0,1,probs)), decreasing = TRUE)
+res = Reduce(cbind,lapply(xaxis, function(prob){
+  useonly = which(probs &gt;= prob)
+  predict_class = 1*(probs &gt;= prob)
+  theprofit = Profit_Matrix[1,1]*sum(predict_class==1 &amp; actual_class ==1)+
+    Profit_Matrix[1,2]*sum(predict_class==0 &amp; actual_class ==1)+
+    Profit_Matrix[2,1]*sum(predict_class==1 &amp; actual_class ==0)+
+    Profit_Matrix[2,2]*sum(predict_class==0 &amp; actual_class ==0)
+  
+  c(100*length(useonly)/length(actual_class), theprofit) 
+  }))
+xaxis = res[1,]; yaxis = res[2,]
+df&lt;-data.frame(Percentile = xaxis, Profit = yaxis)
+iplot.df(df, x="Percentile", y="Profit", v=NULL)
+
+best_profits_small_tree = df[which.max(df$Profit),]
+</code></pre>
+<p>The profit curve using the large classification tree:</p>
+<pre lang="{r}"><code>probs = test_Probability_class1_tree_large
+xaxis = sort(unique(c(0,1,probs)), decreasing = TRUE)
+res = Reduce(cbind,lapply(xaxis, function(prob){
+  useonly = which(probs &gt;= prob)
+  predict_class = 1*(probs &gt;= prob)
+  theprofit = Profit_Matrix[1,1]*sum(predict_class==1 &amp; actual_class ==1)+
+    Profit_Matrix[1,2]*sum(predict_class==0 &amp; actual_class ==1)+
+    Profit_Matrix[2,1]*sum(predict_class==1 &amp; actual_class ==0)+
+    Profit_Matrix[2,2]*sum(predict_class==0 &amp; actual_class ==0)
+  
+  c(100*length(useonly)/length(actual_class), theprofit) 
+  }))
+xaxis = res[1,]; yaxis = res[2,]
+names(xaxis)&lt;- NULL; names(yaxis) &lt;- NULL
+df&lt;-data.frame(Percentile = xaxis, Profit = yaxis)
+iplot.df(df, x="Percentile", y="Profit", v=NULL)
+
+best_profits_large_tree = df[which.max(df$Profit),]
+</code></pre>
+<p>The profit curve using the logistic regression classifier:</p>
+<pre lang="{r}"><code>probs = test_Probability_class1_log
+xaxis = sort(unique(c(0,1,probs)), decreasing = TRUE)
+res = Reduce(cbind,lapply(xaxis, function(prob){
+  useonly = which(probs &gt;= prob)
+  predict_class = 1*(probs &gt;= prob)
+  theprofit = Profit_Matrix[1,1]*sum(predict_class==1 &amp; actual_class ==1)+
+    Profit_Matrix[1,2]*sum(predict_class==0 &amp; actual_class ==1)+
+    Profit_Matrix[2,1]*sum(predict_class==1 &amp; actual_class ==0)+
+    Profit_Matrix[2,2]*sum(predict_class==0 &amp; actual_class ==0)
+  
+  c(100*length(useonly)/length(actual_class), theprofit) 
+  }))
+xaxis = res[1,]; yaxis = res[2,]
+names(xaxis)&lt;- NULL; names(yaxis) &lt;- NULL
+df&lt;-data.frame(Percentile = xaxis, Profit = yaxis)
+iplot.df(df, x="Percentile", y="Profit", v=NULL)
+
+best_profits_logistic = df[which.max(df$Profit),]
+</code></pre>
+<p>These are the maximum total profit achieved in the test data using the three classifiers (without any segment specific analysis so far).</p>
+<pre lang="{r}"><code>best_profits = rbind(best_profits_small_tree, best_profits_large_tree, best_profits_logistic)
+rownames(best_profits) &lt;- c("Small Tree", "Large Tree", "Logistic Regression")
+iprint.df(round(best_profits, 2))
+</code></pre>
+<hr>\clearpage
+<h1><a href="#part-4-business-decisions" aria-hidden="true" class="anchor" id="user-content-part-4-business-decisions"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Part 4: Business Decisions</h1>
+<p>We will now get the results of the overall process (parts 1-3) and based on them make business decisions (e.g. answer the questions of the Boats case study). Specifically, we will study the purchase drivers for each segment we found and consider the profit curves of the developed models on our test data.</p>
+<p><strong>Final Solution: Segment Specific Analysis</strong></p>
+<p>Let's see first how many observations we have in each segment, for the segments we selected above:</p>
+<pre lang="{r}"><code># Let's rename cluster_memberships as cluster_ids
+cluster_ids &lt;- cluster_memberships
+
+cluster_size = NULL
+for (i in sort(unique(cluster_ids))){
+  cluster_size = c(cluster_size,sum(cluster_ids == i))
+  }
+cluster_size = matrix(cluster_size, nrow=1)
+colnames(cluster_size) &lt;- paste("Segment", 1:length(cluster_size), sep=" ")
+rownames(cluster_size) &lt;- "Number of Obs."
+iprint.df(cluster_size, scale=TRUE)
+</code></pre>
+<p>This is our final segment specific analysis and solution. We can study now the purchase drivers (average answers to Q16 of the survey) for each segment. They are as follows:</p>
+<pre lang="{r}"><code>actual_class&lt;- test_data[,dependent_variable]
+probs_tree = 0*test_Probability_class1_tree
+probs_tree_large = 0*test_Probability_class1_tree_large
+probs_log = 0*test_Probability_class1_log
+Log_Drivers = NULL
+
+for (i in sort(unique(cluster_ids))){
+  useonly = which(cluster_ids==i)
+  if (length(useonly) &gt;= min_segment){
+    
+    test_ids_used = intersect(test_data_ids,useonly)
+    probs_to_fill = which(sapply(test_data_ids, function(i) sum(test_ids_used==i)) !=0)
+    estimation_data_clus=ProjectData[intersect(estimation_data_ids,useonly) ,]
+    test_data_clus=ProjectData[intersect(test_data_ids,useonly),]
+    
+    ###
+    estimation_data_clus_nolabel = cbind(estimation_data_clus[,dependent_variable], estimation_data_clus[,independent_variables])
+    colnames(estimation_data_clus_nolabel)&lt;- c(colnames(estimation_data_clus)[dependent_variable],independent_variables_nolabel)
+    
+    test_data_clus_nolabel = cbind(test_data_clus[,dependent_variable], test_data_clus[,independent_variables])
+    colnames(test_data_clus_nolabel)&lt;- c(dependent_variable,independent_variables_nolabel)
+    
+    estimation_data_clus = data.frame(estimation_data_clus)
+    test_data_clus = data.frame(test_data_clus)
+    estimation_data_clus_nolabel = data.frame(estimation_data_clus_nolabel)
+    test_data_clus_nolabel = data.frame(test_data_clus_nolabel)
+    ###
+    
+    CART_tree&lt;-rpart(formula, data= estimation_data_clus_nolabel,method="class", control=CART_control)    
+    CART_tree_large&lt;-rpart(formula, data= estimation_data_clus_nolabel,method="class", control=rpart.control(cp = 0.005))
+    logreg_solution &lt;- glm(formula_log, family=binomial(link="logit"),  data=estimation_data_clus)
+    
+    #####
+    
+    test_Probability_class1_tree&lt;-predict(CART_tree, test_data_clus_nolabel)[,2]
+    test_Probability_class1_tree_large&lt;-predict(CART_tree_large, test_data_clus_nolabel)[,2]
+    test_Probability_class1_log&lt;-predict(logreg_solution, type="response", newdata=test_data_clus[,independent_variables])
+    
+    #######
+    probs_tree[probs_to_fill] &lt;- test_Probability_class1_tree
+    probs_tree_large[probs_to_fill] &lt;- test_Probability_class1_tree
+    probs_log[probs_to_fill] &lt;- test_Probability_class1_log
+    
+    
+    log_coefficients = round(summary(logreg_solution)$coefficients,1)
+    Log_Drivers_segment = tail(log_coefficients[,"z value", drop=F],-1) # remove the intercept
+    Log_Drivers_segment = Log_Drivers_segment/max(abs(Log_Drivers_segment))
+    
+    tree_importance = CART_tree$variable.importance
+    tree_ordered_drivers = as.numeric(gsub("\\IV"," ",names(CART_tree$variable.importance)))
+    tree_importance_final = rep(0,length(independent_variables))
+    tree_importance_final[tree_ordered_drivers] &lt;- tree_importance
+    tree_importance_final &lt;- tree_importance_final/max(abs(tree_importance_final))
+    tree_importance_final &lt;- tree_importance_final*sign(Log_Drivers_segment)
+    
+    #Log_Drivers = cbind(Log_Drivers,tree_importance_final)
+    Log_Drivers = cbind(Log_Drivers,Log_Drivers_segment)
+
+    
+    }
+  }
+colnames(Log_Drivers) &lt;- paste("Segment", 1:length(unique(cluster_ids)), sep = " ")
+iprint.df(round(tail(Log_Drivers,-1), 2))
+</code></pre>
+<p>The profit curves for the test data in this case are as follows. The profit curve using the small classification tree is:</p>
+<pre lang="{r}"><code>actual_class&lt;- test_data[,dependent_variable]
+
+probs = probs_tree
+xaxis = sort(unique(c(0,1,probs)), decreasing = TRUE)
+res = Reduce(cbind,lapply(xaxis, function(prob){
+  useonly = which(probs &gt;= prob)
+  predict_class = 1*(probs &gt;= prob)
+  theprofit = Profit_Matrix[1,1]*sum(predict_class==1 &amp; actual_class ==1)+
+    Profit_Matrix[1,2]*sum(predict_class==0 &amp; actual_class ==1)+
+    Profit_Matrix[2,1]*sum(predict_class==1 &amp; actual_class ==0)+
+    Profit_Matrix[2,2]*sum(predict_class==0 &amp; actual_class ==0)
+  
+  c(100*length(useonly)/length(actual_class), theprofit) 
+  }))
+xaxis = res[1,]; yaxis = res[2,]
+names(xaxis)&lt;- NULL; names(yaxis) &lt;- NULL
+df&lt;-data.frame(Percentile = xaxis, Profit = yaxis)
+iplot.df(df, x="Percentile", y="Profit", v=NULL)
+
+best_profits_small_tree = df[which.max(df$Profit),]
+</code></pre>
+<p>The profit curve using the large classification tree is:</p>
+<pre lang="{r}"><code>probs = probs_tree_large
+xaxis = sort(unique(c(0,1,probs)), decreasing = TRUE)
+res = Reduce(cbind,lapply(xaxis, function(prob){
+  useonly = which(probs &gt;= prob)
+  predict_class = 1*(probs &gt;= prob)
+  theprofit = Profit_Matrix[1,1]*sum(predict_class==1 &amp; actual_class ==1)+
+    Profit_Matrix[1,2]*sum(predict_class==0 &amp; actual_class ==1)+
+    Profit_Matrix[2,1]*sum(predict_class==1 &amp; actual_class ==0)+
+    Profit_Matrix[2,2]*sum(predict_class==0 &amp; actual_class ==0)
+  
+  c(100*length(useonly)/length(actual_class), theprofit) 
+  }))
+xaxis = res[1,]; yaxis = res[2,]
+names(xaxis)&lt;- NULL; names(yaxis) &lt;- NULL
+df&lt;-data.frame(Percentile = xaxis, Profit = yaxis)
+iplot.df(df, x="Percentile", y="Profit", v=NULL)
+
+best_profits_large_tree = df[which.max(df$Profit),]
+</code></pre>
+<p>The profit curve using the logistic regression classifier:</p>
+<pre lang="{r}"><code>probs = probs_log
+xaxis = sort(unique(c(0,1,probs)), decreasing = TRUE)
+res = Reduce(cbind,lapply(xaxis, function(prob){
+  useonly = which(probs &gt;= prob)
+  predict_class = 1*(probs &gt;= prob)
+  theprofit = Profit_Matrix[1,1]*sum(predict_class==1 &amp; actual_class ==1)+
+    Profit_Matrix[1,2]*sum(predict_class==0 &amp; actual_class ==1)+
+    Profit_Matrix[2,1]*sum(predict_class==1 &amp; actual_class ==0)+
+    Profit_Matrix[2,2]*sum(predict_class==0 &amp; actual_class ==0)
+  
+  c(100*length(useonly)/length(actual_class), theprofit) 
+  }))
+xaxis = res[1,]; yaxis = res[2,]
+names(xaxis)&lt;- NULL; names(yaxis) &lt;- NULL
+df&lt;-data.frame(Percentile = xaxis, Profit = yaxis)
+iplot.df(df, x="Percentile", y="Profit", v=NULL)
+
+best_profits_logistic = df[which.max(df$Profit),]
+</code></pre>
+<p>These are the maximum total profit achieved in the test data using the three classifiers with the selected market segmentation solution.</p>
+<pre lang="{r}"><code>best_profits = rbind(best_profits_small_tree, best_profits_large_tree, best_profits_logistic)
+rownames(best_profits) &lt;- c("Small Tree", "Large Tree", "Logistic Regression")
+iprint.df(round(best_profits, 2))
+</code></pre>
+<p><strong>Questions:</strong></p>
+<ol>
+<li>What are the main purchase drivers for the segments and solution you found?</li>
+<li>How different are the purchase drivers you find when you use segmentation versus when you study all customers as "one segment"? Why?</li>
+<li>Based on the overall analysis, what segmentation would you choose?</li>
+<li>What is the business profit the company can achieve (as measured with the test data) based on your solution?</li>
+<li>What business decisions can the company make based on this analysis?</li>
+</ol>
+<p><strong>Answers:</strong></p>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<p><strong>You have now completed your first market segmentation project.</strong> Do you have data from another survey you can use with this report now?</p>
+<p><strong>Extra question</strong>: explore and report a new segmentation analysis...</p>
+</article>
+  </div>
+
+  </div>
+
+  <button type="button" data-facebox="#jump-to-line" data-facebox-class="linejump" data-hotkey="l" class="d-none">Jump to Line</button>
+  <div id="jump-to-line" style="display:none">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="" class="js-jump-to-line-form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+      <input class="form-control linejump-input js-jump-to-line-field" type="text" placeholder="Jump to line&hellip;" aria-label="Jump to line" autofocus>
+      <button type="submit" class="btn">Go</button>
+</form>  </div>
+
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+    </div>
+  </div>
+
+  </div>
+
+      
+<div class="footer container-lg px-3" role="contentinfo">
+  <div class="position-relative d-flex flex-justify-between py-6 mt-6 f6 text-gray border-top border-gray-light ">
+    <ul class="list-style-none d-flex flex-wrap ">
+      <li class="mr-3">&copy; 2018 <span title="0.21081s from unicorn-413375573-ndh74">GitHub</span>, Inc.</li>
+        <li class="mr-3"><a href="#{GitHub.help_url}/articles/github-terms-of-service/" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li class="mr-3"><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li class="mr-3"><a href="#{GitHub.help_url}/articles/github-security/" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li class="mr-3"><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage" class="footer-octicon" title="GitHub">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+    <ul class="list-style-none d-flex flex-wrap ">
+        <li class="mr-3"><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact GitHub</a></li>
+      <li class="mr-3"><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li class="mr-3"><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li class="mr-3"><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li class="mr-3"><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+  </div>
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+    You can't perform that action at this time.
+  </div>
+
+
+    
+    <script crossorigin="anonymous" integrity="sha512-yamwG/VKUh5HtklILKoeL+er//zBLNDimY0WWUtKpD5E7w7b55w6JR+De4OhSMtlybysxpm7WbL5BTkUb9yhIw==" src="https://assets-cdn.github.com/assets/frameworks-c9a9b01bf54a.js" type="application/javascript"></script>
+    
+    <script async="async" crossorigin="anonymous" integrity="sha512-R2hvBe5lP+py2gg23h+wIn3LVoiBN9Mkd6dhmR5i71VgmrmjGIV9LV5PiCJg5xD1J1fjZL91HNaFeeSKMIeShA==" src="https://assets-cdn.github.com/assets/github-47686f05ee65.js" type="application/javascript"></script>
+    
+    
+    
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+  </div>
+</div>
+
+  
+
+  </body>
+</html>
+

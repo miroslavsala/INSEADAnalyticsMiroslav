@@ -1,0 +1,84 @@
+---
+title: "Tutorial 1 ('Bears' problem) *.Rmd template"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## What is an *.Rmd (R Markdown) Document?
+
+This is an R Markdown document (aka notebook) - a simple way of authoring HTML, PDF, and MS Word documents/templates that combine text and the results of the analyses. Its main attraction is that once the template is generated, a new report (for the new data, e.g., next month's or next quarter's data) can be created in minutes, without the need to copy-paste and format. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+The process of creating the final output (in our case, and html webpage) is called "knitting". When you click the **Knit** button in RStudio a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
+
+Below is an example of that, as applied to the "Bears" problem from Tutorial 1.
+
+## Loading the data and displaying its structure
+
+__Context__: you are selling stuffed toy animals for holiday season. Each animal first is sold in a test market, and the "test" data is recorded. Then the selected toys are sold in all markets, and the total "sales" data is recorded. In addition, the kind of the toy is recorded, "SKU". The goal is to predict the market sales of a "Bear" for which the test sales=10 items.
+
+<!-- echo=TRUE below means that the r code below will also show in your output. echo=FALSE will hide the code -->
+
+```{r, echo=TRUE} 
+SalesData<-read.csv("T1 Sales Data.csv")
+str(SalesData)
+```
+
+## Basic Plotting
+
+For example, how do the market sales depend on test sales?
+
+```{r, echo=TRUE}
+plot(Sales ~ Test, data = SalesData)
+```
+
+## Single (one variable) Regression
+
+```{r, echo=TRUE}
+Regression_Model_single<-lm(Sales ~ Test, data = SalesData) #single regression: Y=market sales, X=test sales
+summary(Regression_Model_single)
+#abline(Regression_Model_single, col="red",lwd=4) #plot the trendline 
+```
+
+So if we know that test=10, what is the predicted sales? 
+
+```{r, echo=TRUE}
+predict(Regression_Model_single, newdata=data.frame("Test"=10))
+```
+
+__OK, perfect!__
+
+How good is this regression? Lets check some diagnostic plots
+
+```{r, echo=TRUE}
+par(mfrow=c(1,4)) # This command sets the plot window to show 1 row of 4 plots
+plot(Regression_Model_single) # check the model using diagnostoc plots
+```
+
+Well, not that great: some evidence of heteroschedasticity (the red line on the 1st plot is not quite flat), the Q-Q plot (2nd plot) has systematic deviations from the straight line, and there are some overly influential datapoints (4th plot, see points outside the inner-cone).
+
+Potential fix?
+
+## Multiple Regression
+
+```{r, echo=TRUE}
+Regression_Model_multiple<-lm(Sales ~ Test + SKU, data = SalesData) #single regression: Y=market sales, X=test sales
+summary(Regression_Model_multiple)
+```
+
+Nearly all variables are significant, and the diagnostic plots look much better:
+```{r, echo=TRUE}
+par(mfrow=c(1,4))
+plot(Regression_Model_multiple)
+```
+
+So lets finalily make an updated prediction (now utilizing the fact that the SKU we are predicting is a Bear):
+
+```{r, echo=TRUE}
+predict(Regression_Model_multiple, newdata=data.frame("Test"=10, SKU="Bear"))
+```
+
+## Bingo -- we're done!
+
