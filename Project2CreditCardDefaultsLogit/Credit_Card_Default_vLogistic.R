@@ -14,11 +14,12 @@ pacman::p_load("caret","ROCR","lift","glmnet","MASS","e1071")
 #II. Load datafile and check data structure
 
 credit.default.rawdata<-read.csv(file.choose())
+str(credit.default.rawdata)
 
 #------------------------------------------------------------------------
 #------------------------------------------------------------------------
 
-#III. Fix incorrectly classified data types (from numerical/integer to categories)
+#III. Fix incorrectly classified data types (from numerical/integer to categories - i.e. factor)
 
 credit.default.rawdata$EDUCATION <- as.numeric(credit.default.rawdata$EDUCATION)
 
